@@ -1,19 +1,12 @@
 
-# Visual Studio: configuraciones y caché local
+# Visual Studio
 .vs/
-**/.vs/
 
-# Archivos compilados
-bin/
-obj/
-[Dd]ebug/
-[Rr]elease/
-x64/
-x86/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
+# Archivos generados por la compilación
+**/bin/
+**/obj/
 
-# Archivos de usuario de Visual Studio
+# Archivos de usuario
 *.user
 *.suo
 *.userosscache
