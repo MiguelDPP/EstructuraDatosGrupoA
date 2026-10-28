@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Migue\\Documents\\VSCODE\\EstructuraDeDatos\\EstructuraDeDatos\\EstructuraDeDatos.csproj": {}
+    "C:\\Users\\WinterOS\\Documents\\VSCODE\\UPC\\EstructuraDeDatos\\EstructuraDeDatos\\EstructuraDeDatos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Migue\\Documents\\VSCODE\\EstructuraDeDatos\\EstructuraDeDatos\\EstructuraDeDatos.csproj": {
+    "C:\\Users\\WinterOS\\Documents\\VSCODE\\UPC\\EstructuraDeDatos\\EstructuraDeDatos\\EstructuraDeDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Migue\\Documents\\VSCODE\\EstructuraDeDatos\\EstructuraDeDatos\\EstructuraDeDatos.csproj",
+        "projectUniqueName": "C:\\Users\\WinterOS\\Documents\\VSCODE\\UPC\\EstructuraDeDatos\\EstructuraDeDatos\\EstructuraDeDatos.csproj",
         "projectName": "EstructuraDeDatos",
-        "projectPath": "C:\\Users\\Migue\\Documents\\VSCODE\\EstructuraDeDatos\\EstructuraDeDatos\\EstructuraDeDatos.csproj",
-        "packagesPath": "C:\\Users\\Migue\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Migue\\Documents\\VSCODE\\EstructuraDeDatos\\EstructuraDeDatos\\obj\\",
+        "projectPath": "C:\\Users\\WinterOS\\Documents\\VSCODE\\UPC\\EstructuraDeDatos\\EstructuraDeDatos\\EstructuraDeDatos.csproj",
+        "packagesPath": "C:\\Users\\WinterOS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\WinterOS\\Documents\\VSCODE\\UPC\\EstructuraDeDatos\\EstructuraDeDatos\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Migue\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\WinterOS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
