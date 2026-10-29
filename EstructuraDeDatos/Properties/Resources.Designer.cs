@@ -103,6 +103,16 @@ namespace EstructuraDeDatos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap syncIcon {
+            get {
+                object obj = ResourceManager.GetObject("syncIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap updateIcon {
             get {
                 object obj = ResourceManager.GetObject("updateIcon", resourceCulture);

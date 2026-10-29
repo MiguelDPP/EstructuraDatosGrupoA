@@ -35,6 +35,7 @@
             toolStripButtonUpdateEstudiante = new ToolStripButton();
             toolStripButtonDeleteEstudiante = new ToolStripButton();
             toolStripButtonClearEstudiante = new ToolStripButton();
+            toolStripButtonSyncEstudiante = new ToolStripButton();
             toolStripSeparator2 = new ToolStripSeparator();
             toolStripLabelTitleSearch = new ToolStripLabel();
             toolStripTextBoxSearchEstudiante = new ToolStripTextBox();
@@ -78,7 +79,7 @@
             // 
             // toolStrip1
             // 
-            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripLabelTitle, toolStripSeparator1, toolStripButtonAddEstudiante, toolStripButtonUpdateEstudiante, toolStripButtonDeleteEstudiante, toolStripButtonClearEstudiante, toolStripSeparator2, toolStripLabelTitleSearch, toolStripTextBoxSearchEstudiante, toolStripButton1 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripLabelTitle, toolStripSeparator1, toolStripButtonAddEstudiante, toolStripButtonUpdateEstudiante, toolStripButtonDeleteEstudiante, toolStripButtonClearEstudiante, toolStripButtonSyncEstudiante, toolStripSeparator2, toolStripLabelTitleSearch, toolStripTextBoxSearchEstudiante, toolStripButton1 });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(884, 25);
@@ -103,7 +104,8 @@
             toolStripButtonAddEstudiante.ImageTransparentColor = Color.Magenta;
             toolStripButtonAddEstudiante.Name = "toolStripButtonAddEstudiante";
             toolStripButtonAddEstudiante.Size = new Size(23, 22);
-            toolStripButtonAddEstudiante.Text = "toolStripButton1";
+            toolStripButtonAddEstudiante.Text = "Agregar Estudiante";
+            toolStripButtonAddEstudiante.Click += toolStripButtonAddEstudiante_Click;
             // 
             // toolStripButtonUpdateEstudiante
             // 
@@ -112,7 +114,8 @@
             toolStripButtonUpdateEstudiante.ImageTransparentColor = Color.Magenta;
             toolStripButtonUpdateEstudiante.Name = "toolStripButtonUpdateEstudiante";
             toolStripButtonUpdateEstudiante.Size = new Size(23, 22);
-            toolStripButtonUpdateEstudiante.Text = "toolStripButtonUpdate";
+            toolStripButtonUpdateEstudiante.Text = "Actualizar Estudiante";
+            toolStripButtonUpdateEstudiante.Click += toolStripButtonUpdateEstudiante_Click;
             // 
             // toolStripButtonDeleteEstudiante
             // 
@@ -121,7 +124,8 @@
             toolStripButtonDeleteEstudiante.ImageTransparentColor = Color.Magenta;
             toolStripButtonDeleteEstudiante.Name = "toolStripButtonDeleteEstudiante";
             toolStripButtonDeleteEstudiante.Size = new Size(23, 22);
-            toolStripButtonDeleteEstudiante.Text = "toolStripButton1";
+            toolStripButtonDeleteEstudiante.Text = "Eliminar Estudiante";
+            toolStripButtonDeleteEstudiante.Click += toolStripButtonDeleteEstudiante_Click;
             // 
             // toolStripButtonClearEstudiante
             // 
@@ -130,7 +134,18 @@
             toolStripButtonClearEstudiante.ImageTransparentColor = Color.Magenta;
             toolStripButtonClearEstudiante.Name = "toolStripButtonClearEstudiante";
             toolStripButtonClearEstudiante.Size = new Size(23, 22);
-            toolStripButtonClearEstudiante.Text = "toolStripButton2";
+            toolStripButtonClearEstudiante.Text = "Limpiar Estudiante";
+            toolStripButtonClearEstudiante.Click += toolStripButtonClearEstudiante_Click;
+            // 
+            // toolStripButtonSyncEstudiante
+            // 
+            toolStripButtonSyncEstudiante.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButtonSyncEstudiante.Image = Properties.Resources.syncIcon;
+            toolStripButtonSyncEstudiante.ImageTransparentColor = Color.Magenta;
+            toolStripButtonSyncEstudiante.Name = "toolStripButtonSyncEstudiante";
+            toolStripButtonSyncEstudiante.Size = new Size(23, 22);
+            toolStripButtonSyncEstudiante.Text = "Guardar en archivo";
+            toolStripButtonSyncEstudiante.Click += toolStripButtonSyncEstudiante_Click;
             // 
             // toolStripSeparator2
             // 
@@ -156,7 +171,7 @@
             toolStripButton1.ImageTransparentColor = Color.Magenta;
             toolStripButton1.Name = "toolStripButton1";
             toolStripButton1.Size = new Size(23, 22);
-            toolStripButton1.Text = "toolStripButton1";
+            toolStripButton1.Text = "Buscar";
             // 
             // splitContainer1
             // 
@@ -231,6 +246,7 @@
             txtPag.Name = "txtPag";
             txtPag.Size = new Size(52, 23);
             txtPag.TabIndex = 2;
+            txtPag.TextAlign = HorizontalAlignment.Center;
             // 
             // btnPagBack
             // 
@@ -262,6 +278,7 @@
             // cbPrograma
             // 
             cbPrograma.FormattingEnabled = true;
+            cbPrograma.Items.AddRange(new object[] { "Administración de Empresas", "Contaduría Pública", "Derecho", "Economía", "Ingeniería Agroindustrial", "Ingeniería Ambiental y Sanitaria", "Ingeniería de Sistemas" });
             cbPrograma.Location = new Point(70, 0);
             cbPrograma.Name = "cbPrograma";
             cbPrograma.Size = new Size(170, 23);
@@ -318,6 +335,7 @@
             txtDireccion.Name = "txtDireccion";
             txtDireccion.Size = new Size(170, 23);
             txtDireccion.TabIndex = 1;
+            txtDireccion.Validating += txt_Validating;
             // 
             // lbDireccion
             // 
@@ -343,6 +361,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(170, 23);
             txtNombre.TabIndex = 1;
+            txtNombre.Validating += txt_Validating;
             // 
             // lbNombre
             // 
@@ -368,6 +387,7 @@
             txtCedula.Name = "txtCedula";
             txtCedula.Size = new Size(170, 23);
             txtCedula.TabIndex = 2;
+            txtCedula.Validating += txtCedula_Validating;
             // 
             // lblCedula
             // 
@@ -447,5 +467,6 @@
         private TextBox txtPag;
         private Button btnPagBack;
         private Button btnPagHead;
+        private ToolStripButton toolStripButtonSyncEstudiante;
     }
 }
