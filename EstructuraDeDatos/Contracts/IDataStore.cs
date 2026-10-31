@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EstructuraDeDatos.DynamicStructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace EstructuraDeDatos.Contracts
 {
-    internal interface IDataStore<T>
+    internal interface IDataStore<T> where T : class
     {
-        IEnumerable<T> LoadAll();
-        void SaveAll(IEnumerable<T> list);
+        Lista<T> LoadAll();
+        void SaveAll(Lista<T> list);
     }
 }

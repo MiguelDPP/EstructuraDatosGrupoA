@@ -43,16 +43,18 @@
             // 
             panelCedula.Controls.Add(txtNumero);
             panelCedula.Controls.Add(lblNumero);
-            panelCedula.Location = new Point(25, 25);
+            panelCedula.Location = new Point(29, 33);
+            panelCedula.Margin = new Padding(3, 4, 3, 4);
             panelCedula.Name = "panelCedula";
-            panelCedula.Size = new Size(240, 23);
+            panelCedula.Size = new Size(274, 31);
             panelCedula.TabIndex = 1;
             // 
             // txtNumero
             // 
-            txtNumero.Location = new Point(135, 0);
+            txtNumero.Location = new Point(154, 0);
+            txtNumero.Margin = new Padding(3, 4, 3, 4);
             txtNumero.Name = "txtNumero";
-            txtNumero.Size = new Size(105, 23);
+            txtNumero.Size = new Size(119, 27);
             txtNumero.TabIndex = 2;
             txtNumero.Validating += txtNumero_Validating;
             // 
@@ -60,7 +62,7 @@
             // 
             lblNumero.Location = new Point(0, 0);
             lblNumero.Name = "lblNumero";
-            lblNumero.Size = new Size(139, 23);
+            lblNumero.Size = new Size(159, 31);
             lblNumero.TabIndex = 0;
             lblNumero.Text = "Numero o posicion";
             lblNumero.TextAlign = ContentAlignment.MiddleLeft;
@@ -68,17 +70,19 @@
             // listBoxNumeros
             // 
             listBoxNumeros.FormattingEnabled = true;
-            listBoxNumeros.Location = new Point(25, 92);
+            listBoxNumeros.Location = new Point(29, 123);
+            listBoxNumeros.Margin = new Padding(3, 4, 3, 4);
             listBoxNumeros.Name = "listBoxNumeros";
-            listBoxNumeros.Size = new Size(240, 199);
+            listBoxNumeros.Size = new Size(274, 264);
             listBoxNumeros.TabIndex = 3;
             // 
             // btnAgregar
             // 
             btnAgregar.BackgroundImage = Properties.Resources.add;
-            btnAgregar.Location = new Point(271, 25);
+            btnAgregar.Location = new Point(310, 33);
+            btnAgregar.Margin = new Padding(3, 4, 3, 4);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(24, 24);
+            btnAgregar.Size = new Size(27, 32);
             btnAgregar.TabIndex = 4;
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
@@ -86,9 +90,10 @@
             // btnEliminar
             // 
             btnEliminar.BackgroundImage = Properties.Resources.deleteIcon;
-            btnEliminar.Location = new Point(301, 25);
+            btnEliminar.Location = new Point(344, 33);
+            btnEliminar.Margin = new Padding(3, 4, 3, 4);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(24, 24);
+            btnEliminar.Size = new Size(27, 32);
             btnEliminar.TabIndex = 5;
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
@@ -101,13 +106,14 @@
             // 
             // FrListaBasica
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(486, 348);
+            ClientSize = new Size(555, 464);
             Controls.Add(btnEliminar);
             Controls.Add(btnAgregar);
             Controls.Add(listBoxNumeros);
             Controls.Add(panelCedula);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FrListaBasica";
             Text = "FrListaBasica";
             panelCedula.ResumeLayout(false);

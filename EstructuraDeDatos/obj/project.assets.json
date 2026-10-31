@@ -8,19 +8,24 @@
     "net10.0-windows": []
   },
   "packageFolders": {
-    "C:\\Users\\Migue\\.nuget\\packages\\": {}
+    "C:\\Users\\WinterOS\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Migue\\Documents\\VSCODE\\EstructuraDeDatos\\EstructuraDeDatos\\EstructuraDeDatos.csproj",
+      "projectUniqueName": "C:\\Users\\WinterOS\\Documents\\VSCODE\\UPC\\EstructuraDatosGA\\EstructuraDeDatos\\EstructuraDeDatos.csproj",
       "projectName": "EstructuraDeDatos",
-      "projectPath": "C:\\Users\\Migue\\Documents\\VSCODE\\EstructuraDeDatos\\EstructuraDeDatos\\EstructuraDeDatos.csproj",
-      "packagesPath": "C:\\Users\\Migue\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Migue\\Documents\\VSCODE\\EstructuraDeDatos\\EstructuraDeDatos\\obj\\",
+      "projectPath": "C:\\Users\\WinterOS\\Documents\\VSCODE\\UPC\\EstructuraDatosGA\\EstructuraDeDatos\\EstructuraDeDatos.csproj",
+      "packagesPath": "C:\\Users\\WinterOS\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\WinterOS\\Documents\\VSCODE\\UPC\\EstructuraDatosGA\\EstructuraDeDatos\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Migue\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\WinterOS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

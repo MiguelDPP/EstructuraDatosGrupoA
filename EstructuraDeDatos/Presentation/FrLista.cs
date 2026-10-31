@@ -1,4 +1,5 @@
 ﻿using EstructuraDeDatos.Domain;
+using EstructuraDeDatos.DynamicStructure;
 using EstructuraDeDatos.Infraestructure;
 using EstructuraDeDatos.Tools;
 using System;
@@ -14,7 +15,7 @@ namespace EstructuraDeDatos.Presentation
     public partial class FrLista : Form
     {
         private RepositorioEstudiantes _repositorio;
-        private List<Estudiante> _estudiantes;
+        private Lista<Estudiante> _estudiantes;
         private int currenIndex = 0;
 
         private long cedula = 0;
@@ -23,12 +24,8 @@ namespace EstructuraDeDatos.Presentation
         {
             InitializeComponent();
 
-            if (!File.Exists("estudiantes.txt") == null)
-            {
-                File.Create("estudiantes.txt").Close();
-            }
             _repositorio = RepositorioEstudiantes.GetInstance("estudiantes.txt");
-            _estudiantes = _repositorio.GetAll().ToList();
+            _estudiantes = _repositorio.GetAll();
             this.Shown += FrLista_Show;
         }
 
@@ -46,7 +43,7 @@ namespace EstructuraDeDatos.Presentation
         private void FrLista_Show(object sender, EventArgs e)
         {
             if (_estudiantes == null || _estudiantes.Count == 0) return;
-            Estudiante estudiante = _estudiantes[currenIndex];
+            Estudiante estudiante = _estudiantes.ElementAt(currenIndex);
             SetEstudiante(estudiante);
             DisplayCounter();
         }
@@ -85,7 +82,7 @@ namespace EstructuraDeDatos.Presentation
                     break;
             }
 
-            Estudiante estudiante = _estudiantes[currenIndex];
+            Estudiante estudiante = _estudiantes.ElementAt(currenIndex);
             SetEstudiante(estudiante);
 
             DisplayCounter();

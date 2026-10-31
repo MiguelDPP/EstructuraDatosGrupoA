@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EstructuraDeDatos.DynamicStructure;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,13 +11,12 @@ namespace EstructuraDeDatos.Presentation
 {
     public partial class FrListaBasica : Form
     {
+        private Lista<string> numeros;
         public FrListaBasica()
         {
             InitializeComponent();
-            numeros = new List<int>();
+            numeros = new Lista<string>();
         }
-
-        private List<int> numeros;
 
         public long validateNumber(Control control)
         {
@@ -36,17 +36,13 @@ namespace EstructuraDeDatos.Presentation
 
         private void txtNumero_Validating(object sender, CancelEventArgs e)
         {
-            validateNumber((Control)sender);
+            //validateNumber((Control)sender);
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            long number = validateNumber(txtNumero);
-            if (number != -1)
-            {
-                numeros.Add((int)number);
-                listBoxNumeros.Items.Add(number);
-            }
+            numeros.Add(txtNumero.Text);
+            listBoxNumeros.Items.Add(txtNumero.Text);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -55,7 +51,7 @@ namespace EstructuraDeDatos.Presentation
 
             if (position >= 0 && position < numeros.Count)
             {
-                numeros.RemoveAt((int)position);
+                numeros.Delete((int)position);
 
                 listBoxNumeros.Items.RemoveAt((int)position);
             }

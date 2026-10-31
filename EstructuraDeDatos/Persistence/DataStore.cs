@@ -1,4 +1,5 @@
 ﻿using EstructuraDeDatos.Contracts;
+using EstructuraDeDatos.DynamicStructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,9 @@ namespace EstructuraDeDatos.Persistence
             _path = path;
         }
 
-        public IEnumerable<T> LoadAll()
+        public Lista<T> LoadAll()
         {
-            List<T> list = new List<T>();
+            Lista<T> list = new Lista<T>();
 
             using (StreamReader sr = new StreamReader(_path))
             {
@@ -34,12 +35,23 @@ namespace EstructuraDeDatos.Persistence
             return list;          
         }
 
-        public void SaveAll(IEnumerable<T> list)
+        public void SaveAll(Lista<T> list)
         {
             StringBuilder sb = new StringBuilder();
 
-            foreach (T item in list)
-                sb.AppendLine(T.Serialize(item));
+            for (int  i=0; i < list.Count; i++)
+            {
+                T data = list.ElementAt(i)!;
+
+                //Aquí hay un error
+
+                //data.Ser
+                //sb.AppendLine(((T)list.ElementAt(i)).ser);
+            }
+            //Aquí hay un error
+
+            //foreach (T item in list)
+            //    sb.AppendLine(T.Serialize(item));
             
             using (StreamWriter sw = new StreamWriter(_path))
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EstructuraDeDatos.DynamicStructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace EstructuraDeDatos.Contracts
         void Delete(E id);
         bool Exist(E id);
         T GetById(E id);
-        IEnumerable<T> GetAll(); //la implementan las listas
+        Lista<T> GetAll(); //la implementan las listas
     }
 
 }

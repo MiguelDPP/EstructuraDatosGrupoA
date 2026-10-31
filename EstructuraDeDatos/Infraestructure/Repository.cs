@@ -1,4 +1,5 @@
 ﻿using EstructuraDeDatos.Contracts;
+using EstructuraDeDatos.DynamicStructure;
 using EstructuraDeDatos.Persistence;
 using System;
 using System.Collections.Generic;
@@ -10,13 +11,13 @@ namespace EstructuraDeDatos.Infraestructure
 {
     internal class Repository<T,E> : IUnidOfWork, IRepository<T, E> where T : class, IFactory<T>, IEntity<E>, ISerialize<T>
     {
-        private List<T> _cache;
+        private Lista<T> _cache;
         private DataStore<T> _store;
 
         public Repository(string path)
         {
             _store = new DataStore<T>(path);         
-            _cache = _store.LoadAll().ToList() ?? new List<T>();
+            _cache = _store.LoadAll() ?? new Lista<T>();
         }
 
 
@@ -47,7 +48,7 @@ namespace EstructuraDeDatos.Infraestructure
             return _cache.FirstOrDefault(d => d.Id.Equals(id));
         }
 
-        public IEnumerable<T> GetAll()
+        public Lista<T> GetAll()
         {
             return _cache;
         }
