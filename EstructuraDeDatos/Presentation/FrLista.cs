@@ -45,48 +45,54 @@ namespace EstructuraDeDatos.Presentation
             if (_estudiantes == null || _estudiantes.Count == 0) return;
             Estudiante estudiante = _estudiantes.ElementAt(currenIndex);
             SetEstudiante(estudiante);
-            DisplayCounter();
+            
+            DisplayCounter(_estudiantes.moveToHead());
         }
 
 
         // -------------- Paginacion ------------------
-        private void DisplayCounter()
+        private void DisplayCounter(Paginator<Estudiante> paginator)
         {
-            txtPag.Text = (currenIndex + 1) + " / " + _estudiantes.Count.ToString();
+            txtPag.Text = paginator.Page + " / " + paginator.TotalPage;
         }
 
-        private void Navegar_Click(object sender, EventArgs e)
+        private void txt_Validating(object sender, EventArgs e)
         {
             Button button = (Button)sender;
 
             if (_estudiantes == null || _estudiantes.Count == 0) return;
 
+            Paginator<Estudiante> paginator = null;
+
             switch (button.Text)
             {
                 case "<<":
-                    currenIndex = 0;
+                    paginator = _estudiantes.moveToHead();
                     break;
                 case "<":
                     //if(currenIndex > 0)
                     //{
                     //currenIndex--;
                     //}
-                    currenIndex = (currenIndex > 0) ? currenIndex - 1 : 0;
+                    paginator = _estudiantes.moveToLeft();
                     break;
                 case ">":
-                    currenIndex = (currenIndex < _estudiantes.Count - 1) ? currenIndex + 1 : 0;
+                    paginator = _estudiantes.moveToRigth();
                     //currenIndex++;
                     break;
                 case ">>":
-                    currenIndex = _estudiantes.Count - 1;
+                    paginator = _estudiantes.moveToLast();
                     break;
             }
 
-            Estudiante estudiante = _estudiantes.ElementAt(currenIndex);
-            SetEstudiante(estudiante);
+            if (paginator != null)
+            {
+                Estudiante estudiante = paginator.Data;
+                SetEstudiante(estudiante);
 
-            DisplayCounter();
-
+                DisplayCounter(paginator);
+                cedula = estudiante.Id;
+            }
         }
 
         // -------------- ///// ------------------
@@ -224,7 +230,7 @@ namespace EstructuraDeDatos.Presentation
         {
             _repositorio.Commit();
             MessageBox.Show("¿desea guardad los cambios?", "s", MessageBoxButtons.YesNo);
-            DisplayCounter();
+            //DisplayCounter();
         }
 
         private void toolStripButtonAddEstudiante_Click(object sender, EventArgs e)
@@ -241,7 +247,7 @@ namespace EstructuraDeDatos.Presentation
                 FillEstudiante(estudiante);
                 _repositorio.Add(estudiante);
                 MessageBox.Show("Estudiante agregado correctamente");
-                DisplayCounter();
+                //DisplayCounter();
             }
         }
 
@@ -256,9 +262,6 @@ namespace EstructuraDeDatos.Presentation
             validateEmpty((Control)sender);
         }
 
-        private void txtNumero_Validating(object sender, CancelEventArgs e)
-        {
-
-        }
+        
     }
 }

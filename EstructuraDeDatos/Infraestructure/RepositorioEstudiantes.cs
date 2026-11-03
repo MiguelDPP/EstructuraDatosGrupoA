@@ -40,10 +40,15 @@ namespace EstructuraDeDatos.Infraestructure
 
         public int Find(long id)
         {
-            //Ahora volvemos
-            //return cache.FindIndex(p  => p.Id == id);
-
-            return 0;
+            for (int i = 0; i < cache.Count; i++)
+            {
+                Estudiante data = cache.ElementAt(i);
+                if (data.Id == id)
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
 
         public void Delete(long id)
@@ -56,10 +61,6 @@ namespace EstructuraDeDatos.Infraestructure
             return _repository.Exist(id);
         }
 
-        public Lista<Estudiante> GetAll()
-        {
-            return _repository.GetAll(); ;
-        }
 
         public Estudiante GetById(long id)
         {
@@ -68,18 +69,23 @@ namespace EstructuraDeDatos.Infraestructure
 
         public void Update(Estudiante entity)
         {
-            int index = Find(entity.Id);
-            if (index != -1)
-            {
-                //Ahora volvemos
-                ///cache[index] =entity;
-            }
+            //int index = Find(entity.Id);
+            //if (index != -1)
+            //{
+            //    //Ahora volvemos
+            //    ///cache[index] =entity;
+            //}
             _repository.Update(entity);
         }
 
         public void Commit()
         {
             _repository.Commit();
+        }
+
+        public Lista<Estudiante> GetAll()
+        {
+            return _repository.GetAll();
         }
     }
 }

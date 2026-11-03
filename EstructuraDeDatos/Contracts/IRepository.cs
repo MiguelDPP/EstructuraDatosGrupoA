@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EstructuraDeDatos.Contracts
 {
-    public interface IRepository<T,E> where T : class, IEntity<E>
+    public interface IRepository<T, E> where T : class, IEntity<E>
     {
         void Add(T entity);
         void Update(T entity);
@@ -16,5 +16,4 @@ namespace EstructuraDeDatos.Contracts
         T GetById(E id);
         Lista<T> GetAll(); //la implementan las listas
     }
-
 }

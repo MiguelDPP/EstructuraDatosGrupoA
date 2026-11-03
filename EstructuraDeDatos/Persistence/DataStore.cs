@@ -39,20 +39,17 @@ namespace EstructuraDeDatos.Persistence
         {
             StringBuilder sb = new StringBuilder();
 
-            for (int  i=0; i < list.Count; i++)
+            for (int i = 0; i < list.Count; i++)
             {
                 T data = list.ElementAt(i)!;
 
-                //Aquí hay un error
-
-                //data.Ser
-                //sb.AppendLine(((T)list.ElementAt(i)).ser);
+                sb.AppendLine(T.Serialize(data));
             }
             //Aquí hay un error
 
             //foreach (T item in list)
             //    sb.AppendLine(T.Serialize(item));
-            
+
             using (StreamWriter sw = new StreamWriter(_path))
             {
                 sw.Write(sb.ToString());
