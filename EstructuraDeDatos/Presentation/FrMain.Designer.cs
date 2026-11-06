@@ -31,10 +31,12 @@
             menuStripMain = new MenuStrip();
             archivoToolStripMenuItem = new ToolStripMenuItem();
             gestionDominioToolStripMenuItem = new ToolStripMenuItem();
+            listaBasicaToolStripMenuItem = new ToolStripMenuItem();
             navegacionListasToolStripMenuItem = new ToolStripMenuItem();
             pilasToolStripMenuItem = new ToolStripMenuItem();
+            pilaBasicaToolStripMenuItem = new ToolStripMenuItem();
+            torreDeHanoiToolStripMenuItem = new ToolStripMenuItem();
             colasToolStripMenuItem = new ToolStripMenuItem();
-            listaBasicaToolStripMenuItem = new ToolStripMenuItem();
             menuStripMain.SuspendLayout();
             SuspendLayout();
             // 
@@ -60,31 +62,46 @@
             gestionDominioToolStripMenuItem.Size = new Size(48, 20);
             gestionDominioToolStripMenuItem.Text = "Listas";
             // 
+            // listaBasicaToolStripMenuItem
+            // 
+            listaBasicaToolStripMenuItem.Name = "listaBasicaToolStripMenuItem";
+            listaBasicaToolStripMenuItem.Size = new Size(169, 22);
+            listaBasicaToolStripMenuItem.Text = "Lista Basica";
+            listaBasicaToolStripMenuItem.Click += listaBasicaToolStripMenuItem_Click;
+            // 
             // navegacionListasToolStripMenuItem
             // 
             navegacionListasToolStripMenuItem.Name = "navegacionListasToolStripMenuItem";
-            navegacionListasToolStripMenuItem.Size = new Size(180, 22);
+            navegacionListasToolStripMenuItem.Size = new Size(169, 22);
             navegacionListasToolStripMenuItem.Text = "Navegacion Listas";
             navegacionListasToolStripMenuItem.Click += navegacionListasToolStripMenuItem_Click;
             // 
             // pilasToolStripMenuItem
             // 
+            pilasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { pilaBasicaToolStripMenuItem, torreDeHanoiToolStripMenuItem });
             pilasToolStripMenuItem.Name = "pilasToolStripMenuItem";
             pilasToolStripMenuItem.Size = new Size(43, 20);
             pilasToolStripMenuItem.Text = "Pilas";
+            // 
+            // pilaBasicaToolStripMenuItem
+            // 
+            pilaBasicaToolStripMenuItem.Name = "pilaBasicaToolStripMenuItem";
+            pilaBasicaToolStripMenuItem.Size = new Size(180, 22);
+            pilaBasicaToolStripMenuItem.Text = "Pila Basica";
+            pilaBasicaToolStripMenuItem.Click += pilaBasicaToolStripMenuItem_Click;
+            // 
+            // torreDeHanoiToolStripMenuItem
+            // 
+            torreDeHanoiToolStripMenuItem.Name = "torreDeHanoiToolStripMenuItem";
+            torreDeHanoiToolStripMenuItem.Size = new Size(180, 22);
+            torreDeHanoiToolStripMenuItem.Text = "Torre de Hanoi";
+            torreDeHanoiToolStripMenuItem.Click += torreDeHanoiToolStripMenuItem_Click;
             // 
             // colasToolStripMenuItem
             // 
             colasToolStripMenuItem.Name = "colasToolStripMenuItem";
             colasToolStripMenuItem.Size = new Size(48, 20);
             colasToolStripMenuItem.Text = "Colas";
-            // 
-            // listaBasicaToolStripMenuItem
-            // 
-            listaBasicaToolStripMenuItem.Name = "listaBasicaToolStripMenuItem";
-            listaBasicaToolStripMenuItem.Size = new Size(180, 22);
-            listaBasicaToolStripMenuItem.Text = "Lista Basica";
-            listaBasicaToolStripMenuItem.Click += listaBasicaToolStripMenuItem_Click;
             // 
             // FrMain
             // 
@@ -111,5 +128,7 @@
         private ToolStripMenuItem pilasToolStripMenuItem;
         private ToolStripMenuItem colasToolStripMenuItem;
         private ToolStripMenuItem listaBasicaToolStripMenuItem;
+        private ToolStripMenuItem pilaBasicaToolStripMenuItem;
+        private ToolStripMenuItem torreDeHanoiToolStripMenuItem;
     }
 }

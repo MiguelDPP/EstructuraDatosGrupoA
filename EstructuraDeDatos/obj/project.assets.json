@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Migue\\Documents\\VSCODE\\Temporal\\EstructuraDatosGrupoA\\EstructuraDeDatos\\EstructuraDeDatos.csproj",
+      "projectUniqueName": "C:\\Users\\Migue\\Documents\\VSCODE\\PROYECTOS UPC\\Proyectos Actuales\\EstructuraDatosGrupoA\\EstructuraDeDatos\\EstructuraDeDatos.csproj",
       "projectName": "EstructuraDeDatos",
-      "projectPath": "C:\\Users\\Migue\\Documents\\VSCODE\\Temporal\\EstructuraDatosGrupoA\\EstructuraDeDatos\\EstructuraDeDatos.csproj",
+      "projectPath": "C:\\Users\\Migue\\Documents\\VSCODE\\PROYECTOS UPC\\Proyectos Actuales\\EstructuraDatosGrupoA\\EstructuraDeDatos\\EstructuraDeDatos.csproj",
       "packagesPath": "C:\\Users\\Migue\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Migue\\Documents\\VSCODE\\Temporal\\EstructuraDatosGrupoA\\EstructuraDeDatos\\obj\\",
+      "outputPath": "C:\\Users\\Migue\\Documents\\VSCODE\\PROYECTOS UPC\\Proyectos Actuales\\EstructuraDatosGrupoA\\EstructuraDeDatos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Migue\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,4 +1,5 @@
-﻿using EstructuraDeDatos.Tools;
+﻿using EstructuraDeDatos.Presentation.Pilas;
+using EstructuraDeDatos.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace EstructuraDeDatos.Presentation
             InitializeComponent();
         }
 
-        
+
 
         private void navegacionListasToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -27,6 +28,16 @@ namespace EstructuraDeDatos.Presentation
         private void listaBasicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Tool.openForm<FrListaBasica>(this);
+        }
+
+        private void pilaBasicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Tool.openForm<FrPilaBasica>(this);
+        }
+
+        private void torreDeHanoiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Tool.openForm<FrHanoiTower>(this);
         }
     }
 }
