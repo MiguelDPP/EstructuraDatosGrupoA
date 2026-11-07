@@ -1,5 +1,6 @@
 ﻿using EstructuraDeDatos.Contracts;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -31,7 +32,7 @@ namespace EstructuraDeDatos.DynamicStructure
         }
     }
 
-    public class Lista<T>: IListOperation<T> where T: class
+    public class Lista<T>:IEnumerable<T>, IListOperation<T> where T: class
     {
         private Node<T> Head { get; set; }
         private Node<T> Last { get; set; }
@@ -238,6 +239,72 @@ namespace EstructuraDeDatos.DynamicStructure
 
                 temp.Data = data;
             }
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            Node<T> temp = Head;
+            while(temp != null)
+            {
+                yield return temp.Data;
+
+                temp = temp.Next;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        public T FirstOrDefault(Predicate<T> check)
+        {
+            Node<T> temp = Head;
+            while(temp != null)
+            {
+                if (check(temp.Data))
+                {
+                    return temp.Data;
+                }
+
+                temp = temp.Next;
+            }
+
+            return null;
+        }
+
+        public int FindIndex(Predicate<T> check)
+        {
+            Node<T> temp = Head;
+            int index = 0;
+            while (temp != null)
+            {
+                if (check(temp.Data))
+                {
+                    return index;
+                }
+
+                temp = temp.Next;
+                index++;
+            }
+
+            return -1;
+        }
+
+        public bool Exists(Predicate<T> check)
+        {
+            Node<T> temp = Head;
+            while (temp != null)
+            {
+                if (check(temp.Data))
+                {
+                    return true;
+                }
+
+                temp = temp.Next;
+            }
+
+            return false;
         }
     }
 }
