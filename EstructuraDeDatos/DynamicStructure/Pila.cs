@@ -72,5 +72,10 @@ namespace EstructuraDeDatos.DynamicStructure
         {
             return GetEnumerator();
         }
+
+        public T Peek()
+        {
+            return Top.Data;
+        }
     }
 }

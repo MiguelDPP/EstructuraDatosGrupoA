@@ -43,9 +43,9 @@
             // 
             lbTitle.Font = new Font("Segoe UI", 15F);
             lbTitle.ForeColor = Color.Blue;
-            lbTitle.Location = new Point(20, 20);
+            lbTitle.Location = new Point(23, 27);
             lbTitle.Name = "lbTitle";
-            lbTitle.Size = new Size(760, 36);
+            lbTitle.Size = new Size(869, 48);
             lbTitle.TabIndex = 0;
             lbTitle.Text = "Torre de Hanoi";
             lbTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -56,40 +56,51 @@
             panelPilas.Controls.Add(panelPila3);
             panelPilas.Controls.Add(panelPila2);
             panelPilas.Controls.Add(panelPila1);
-            panelPilas.Location = new Point(20, 79);
+            panelPilas.Location = new Point(23, 105);
+            panelPilas.Margin = new Padding(3, 4, 3, 4);
             panelPilas.Name = "panelPilas";
-            panelPilas.Size = new Size(760, 359);
+            panelPilas.Size = new Size(869, 479);
             panelPilas.TabIndex = 1;
             // 
             // panelPila3
             // 
             panelPila3.BackColor = SystemColors.ActiveBorder;
-            panelPila3.Location = new Point(516, 20);
+            panelPila3.Cursor = Cursors.Hand;
+            panelPila3.Location = new Point(590, 27);
+            panelPila3.Margin = new Padding(3, 4, 3, 4);
             panelPila3.Name = "panelPila3";
-            panelPila3.Size = new Size(226, 319);
+            panelPila3.Size = new Size(258, 425);
             panelPila3.TabIndex = 2;
+            panelPila3.Click += panelPila_Click;
             // 
             // panelPila2
             // 
             panelPila2.BackColor = SystemColors.ActiveBorder;
-            panelPila2.Location = new Point(267, 20);
+            panelPila2.Cursor = Cursors.Hand;
+            panelPila2.Location = new Point(305, 27);
+            panelPila2.Margin = new Padding(3, 4, 3, 4);
             panelPila2.Name = "panelPila2";
-            panelPila2.Size = new Size(226, 319);
+            panelPila2.Size = new Size(258, 425);
             panelPila2.TabIndex = 1;
+            panelPila2.Click += panelPila_Click;
             // 
             // panelPila1
             // 
             panelPila1.BackColor = SystemColors.ActiveBorder;
-            panelPila1.Location = new Point(20, 20);
+            panelPila1.Cursor = Cursors.Hand;
+            panelPila1.Location = new Point(23, 27);
+            panelPila1.Margin = new Padding(3, 4, 3, 4);
             panelPila1.Name = "panelPila1";
-            panelPila1.Size = new Size(226, 319);
+            panelPila1.Size = new Size(258, 425);
             panelPila1.TabIndex = 0;
+            panelPila1.Click += panelPila_Click;
             // 
             // btnReboot
             // 
-            btnReboot.Location = new Point(126, 21);
+            btnReboot.Location = new Point(144, 28);
+            btnReboot.Margin = new Padding(3, 4, 3, 4);
             btnReboot.Name = "btnReboot";
-            btnReboot.Size = new Size(75, 23);
+            btnReboot.Size = new Size(86, 31);
             btnReboot.TabIndex = 2;
             btnReboot.Text = "Reiniciar";
             btnReboot.UseVisualStyleBackColor = true;
@@ -97,30 +108,32 @@
             // 
             // txtDiskNumber
             // 
-            txtDiskNumber.Location = new Point(20, 21);
+            txtDiskNumber.Location = new Point(23, 28);
+            txtDiskNumber.Margin = new Padding(3, 4, 3, 4);
             txtDiskNumber.Name = "txtDiskNumber";
-            txtDiskNumber.Size = new Size(100, 23);
+            txtDiskNumber.Size = new Size(114, 27);
             txtDiskNumber.TabIndex = 3;
             // 
             // lbMovements
             // 
             lbMovements.AutoSize = true;
-            lbMovements.Location = new Point(20, 56);
+            lbMovements.Location = new Point(23, 75);
             lbMovements.Name = "lbMovements";
-            lbMovements.Size = new Size(156, 15);
+            lbMovements.Size = new Size(195, 20);
             lbMovements.TabIndex = 0;
             lbMovements.Text = "Cantidad de movimientos: 0";
             // 
             // FrHanoiTower
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(lbMovements);
             Controls.Add(txtDiskNumber);
             Controls.Add(btnReboot);
             Controls.Add(panelPilas);
             Controls.Add(lbTitle);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FrHanoiTower";
             Text = "FrHanoiTower";
             SizeChanged += FrHanoiTower_SizeChanged;
